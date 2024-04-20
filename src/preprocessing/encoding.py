@@ -3,7 +3,12 @@ import numpy as np
 
 class WoE:
     def __init__(self, bins=5, handle_numeric=True):
+        # self.encoded = {}
+        # self.dist_class = {}
+        # self.feature_name = None
+        # self.information_value = {}
         self.bins = bins
+        # self.num_fea_bins = {}
         self.handle_numeric = handle_numeric
 
     def fit(self, X, y):
@@ -70,6 +75,7 @@ class WoE:
             data[col] = data[col].apply(lambda x: self.encoded[col][x] if x in self.encoded[col].keys() else 0)
         
         return data
+        
 
     def create_bins(self, feature, bins):
         bins = pd.cut(feature, bins=bins, right=False, retbins=True)[1]
@@ -95,30 +101,6 @@ class WoE:
         for bins, bins_name in bins.items():
             data.loc[data[feature].between(bins[0], bins[1], "right"), f"{feature}_bins"] = bins_name
         return data.iloc[:, -1]
-
-    def get_feature_names_out(self):
-        return self.feature_name
-    
-class IVSelector(WoE):
-    def __init__(self, threshold=0.02, bins=3):
-        super().__init__()
-        self.threshold = threshold
-        self.bins = bins
-
-    def fit(self, X, y):
-        super().fit(X, y)
-        threshold = self.threshold
-        self.drop = [col for col in self.information_value.keys() if self.information_value[col] < threshold]
-        self.feature_name = [col for col in self.feature_name if col not in self.drop]
-    
-    def fit_transform(self, X, y):
-        self.fit(X, y)
-        data = X.drop(self.drop, axis=1)
-        return data
-
-    def transform(self, X):
-        data = X.drop(self.drop, axis=1)
-        return data
 
     def get_feature_names_out(self):
         return self.feature_name

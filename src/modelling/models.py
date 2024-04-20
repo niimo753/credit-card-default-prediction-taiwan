@@ -11,7 +11,6 @@ class DefaultPaymentClassifier:
         processed_x = self.processor.fit_transform(X, y)
         if self.balance is not None:
             processed_x, y = self.balance.fit_resample(processed_x, y)
-        # return processed_x, y
         self.model.fit(processed_x, y)
 
     def predict(self, X):
