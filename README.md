@@ -1,7 +1,7 @@
 (Personal Project for Credit Risk Management Module)
 
 # Credit Card Default Prediction
-This study presents a focused investigation into credit card default prediction leveraging Machine Learning models applied to the Taiwan dataset. Through extensive exploration encompassing diverse preprocessing techniques and model variations, our experimentation reveals that Catboost and Random Forest algorithms consistently outperform alternative methodologies in the identification of defaulting instances.
+This study presents a focused investigation into credit card default prediction leveraging Machine Learning models applied to the Taiwan dataset. Through extensive exploration encompassing diverse preprocessing techniques and model variations, my experimentation reveals that Catboost and Random Forest algorithms consistently outperform alternative methodologies in the identification of defaulting instances. [Report of this study.](https://github.com/niimo753/credit-card-default-prediction-taiwan/blob/main/output/report.pdf)
 
 # Dataset
 The data selected for this study is Default of Credit Card Clients from UCI Machine Learning, collected by I-Cheng Yeh, which contains payment data from April to October 2005 from a prominent financial institution, which serves as both a cash provider and credit card issuer, in Taiwan. The dataset contains 30,000 observations and 23 features, including demographic information (such as marital status, education, age, and gender), historical repayment status, and monetary amount (such as limit balance, historical bill statement amount, and payment amount) with no missing values. The response variable of this data is the customer’s default payment in October, which is labeled as either 0 (non-default) or 1 (default).
