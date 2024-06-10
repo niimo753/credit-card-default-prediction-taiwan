@@ -1,4 +1,4 @@
-(Personal Project for Credit Risk Management Module)
+(Personal Project for Credit Risk Analytics Module)
 
 # Credit Card Default Prediction
 This study presents a focused investigation into credit card default prediction leveraging Machine Learning models applied to the Taiwan dataset. Through extensive exploration encompassing diverse preprocessing techniques and model variations, my experimentation reveals that Catboost and Random Forest algorithms consistently outperform alternative methodologies in the identification of defaulting instances. [Report of this study.](https://github.com/niimo753/credit-card-default-prediction-taiwan/blob/main/output/report.pdf)
